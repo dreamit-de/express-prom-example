@@ -1,0 +1,31 @@
+{
+  "name": "express-example",
+  "version": "1.0.0",
+  "description": "Example NodeJS app using Express.js",
+  "main": "build/index.js",
+  "scripts": {
+    "build": "tsc",
+    "lint": "eslint src/*.ts src/**/*.ts",
+    "start": "npm run build && node build/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sgohlke/express-example.git"
+  },
+  "author": "Stefan Gohlke",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sgohlke/express-example/issues"
+  },
+  "homepage": "https://github.com/sgohlke/express-example#readme",
+  "devDependencies": {
+    "@sgohlke/ts-base-dependencies": "1.0.20",
+    "@types/body-parser": "1.19.4",
+    "@types/express": "4.17.20"
+  },
+  "dependencies": {
+    "@dreamit/graphql-server": "4.2.8",
+    "express": "4.18.2",
+    "graphql": "16.8.1"
+  }
+}
