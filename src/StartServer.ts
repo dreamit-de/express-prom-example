@@ -1,0 +1,3 @@
+import { startWebServer } from '.'
+
+startWebServer()

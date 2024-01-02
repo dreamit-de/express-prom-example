@@ -1,4 +1,4 @@
-name: Install and compile express-example
+name: Install and compile
 on: push
 
 jobs:

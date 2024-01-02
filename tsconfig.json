@@ -9,9 +9,20 @@
       "lib": ["es2017", "es7", "es6", "dom"],
       "forceConsistentCasingInFileNames": true,
       "strict": true,
-      "declaration": true
+      "declaration": true,
+      "paths": {
+        "@/*": [
+          "src/*"
+        ],
+        "~/*": [
+          "./*"
+        ]
+      }
     },
-    "include": ["src/**/*"],
+    "include": [
+      "jest.config.js",
+      "src/*",
+      "tests/*"],
     "exclude": ["node_modules"]
   }
   

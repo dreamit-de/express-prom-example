@@ -12,21 +12,31 @@ import {
     GraphQLServerRequest, 
     GraphQLServerResponse 
 } from '@dreamit/graphql-server-base'
+import { PromMetricsClient } from '@dreamit/graphql-prom-metrics'
+import { Server } from 'node:http'
 
-const graphqlServer = new GraphQLServer(
-    {
-        schema: userSchema,
-        rootValue: userSchemaResolvers,
-        logger: new JsonLogger('expressjs-server', 'user-service')
-    }
-)
-
-const graphQLServerPort = 7070
-const graphQLServerExpress = express()
-graphQLServerExpress.use(bodyParser.text({type: '*/*'}))
-graphQLServerExpress.all('/graphql', 
-    (request: GraphQLServerRequest, response: GraphQLServerResponse) => {
-        return graphqlServer.handleRequest(request, response)
-    })
-graphQLServerExpress.listen({port: graphQLServerPort})
-console.info(`Starting GraphQL server on port ${graphQLServerPort}`)
+export function startWebServer(): Server {
+    const graphqlServer = new GraphQLServer(
+        {
+            schema: userSchema,
+            rootValue: userSchemaResolvers,
+            logger: new JsonLogger('expressjs-server', 'user-service'),
+            metricsClient: new PromMetricsClient()
+        }
+    )
+    
+    const graphQLServerPort = 7070
+    const graphQLServerExpress = express()
+    graphQLServerExpress.use(bodyParser.text({type: '*/*'}))
+    graphQLServerExpress.all('/graphql', 
+        (request: GraphQLServerRequest, response: GraphQLServerResponse) => {
+            return graphqlServer.handleRequest(request, response)
+        })
+    graphQLServerExpress.get('/metrics', async(request, response) => {
+        return response.contentType(graphqlServer.getMetricsContentType())
+        .send(await graphqlServer.getMetrics())
+    })    
+    const server = graphQLServerExpress.listen({port: graphQLServerPort})
+    console.info(`Starting GraphQL server on port ${graphQLServerPort}`)
+    return server
+}
