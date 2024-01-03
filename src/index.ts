@@ -1,6 +1,6 @@
 import { 
     GraphQLServer, 
-    JsonLogger 
+    NoStacktraceJsonLogger 
 } from '@dreamit/graphql-server'
 import { 
     userSchema, 
@@ -20,7 +20,12 @@ export function startWebServer(): Server {
         {
             schema: userSchema,
             rootValue: userSchemaResolvers,
-            logger: new JsonLogger('expressjs-server', 'user-service'),
+
+            /**
+             * startWebServer is used in tests, we use a NoStacktraceJsonLogger to clean 
+             * up the tests. In production, you should use the JsonLogger instead.
+             */ 
+            logger: new NoStacktraceJsonLogger('expressjs-server', 'user-service'),
             metricsClient: new PromMetricsClient()
         }
     )
