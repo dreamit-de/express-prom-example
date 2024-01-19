@@ -4,5 +4,3 @@ on: push
 jobs:
   expressexample:
     uses: dreamit-de/workflows/.github/workflows/nodejs-ci.yml@main
-    with:
-      last-lts: ''    
