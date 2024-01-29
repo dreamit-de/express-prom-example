@@ -28,8 +28,8 @@
     "jest-html-reporters": "3.1.7"
   },
   "dependencies": {
-    "@dreamit/graphql-prom-metrics": "1.2.6",
-    "@dreamit/graphql-server": "4.5.0",
+    "@dreamit/graphql-prom-metrics": "1.2.7",
+    "@dreamit/graphql-server": "4.5.1",
     "express": "4.18.2",
     "graphql": "16.8.1",
     "prom-client": "15.1.0"
