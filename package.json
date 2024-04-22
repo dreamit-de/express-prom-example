@@ -32,6 +32,6 @@
     "@dreamit/graphql-server": "4.8.1",
     "express": "4.19.2",
     "graphql": "16.8.1",
-    "prom-client": "15.1.1"
+    "prom-client": "15.1.2"
   }
 }
