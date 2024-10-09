@@ -35,10 +35,10 @@ export function startWebServer(): Server {
     graphQLServerExpress.use(bodyParser.text({type: '*/*'}))
     graphQLServerExpress.all('/graphql', 
         (request: GraphQLServerRequest, response: GraphQLServerResponse) => {
-            return graphqlServer.handleRequest(request, response)
+            graphqlServer.handleRequest(request, response)
         })
     graphQLServerExpress.get('/metrics', async(request, response) => {
-        return response.contentType(graphqlServer.getMetricsContentType())
+        response.contentType(graphqlServer.getMetricsContentType())
         .send(await graphqlServer.getMetrics())
     })    
     const server = graphQLServerExpress.listen({port: graphQLServerPort})
