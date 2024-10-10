@@ -22,7 +22,6 @@
       }
     },
     "include": [
-      "jest.config.js",
       "src/*",
       "tests/*"],
     "exclude": ["node_modules"]
