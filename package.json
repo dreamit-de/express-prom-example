@@ -37,7 +37,7 @@
   "dependencies": {
     "@dreamit/graphql-prom-metrics": "1.2.7",
     "@dreamit/graphql-server": "4.10.2",
-    "express": "4.21.0",
+    "express": "4.21.1",
     "graphql": "16.9.0",
     "prom-client": "15.1.3"
   },
