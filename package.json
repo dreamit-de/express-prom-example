@@ -32,11 +32,11 @@
     "eslint-plugin-unicorn": "56.0.0",
     "tsx": "4.19.2",
     "typescript": "5.6.3",
-    "typescript-eslint": "8.13.0"
+    "typescript-eslint": "8.14.0"
   },
   "dependencies": {
     "@dreamit/graphql-prom-metrics": "1.2.7",
-    "@dreamit/graphql-server": "4.11.0",
+    "@dreamit/graphql-server": "4.11.1",
     "express": "4.21.1",
     "graphql": "16.9.0",
     "prom-client": "15.1.3"
