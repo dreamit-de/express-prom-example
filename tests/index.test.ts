@@ -18,7 +18,7 @@ import {
     usersQuery, 
     userTwo, 
     userVariables 
-} from '@/ExampleSchemas'
+} from '@dreamit/graphql-testing'
 import test, { after, before } from 'node:test'
 import assert from 'node:assert'
 import { ExecutionResult } from 'graphql'

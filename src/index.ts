@@ -5,7 +5,7 @@ import {
 import { 
     userSchema, 
     userSchemaResolvers 
-} from './ExampleSchemas'
+} from '@dreamit/graphql-testing'
 import express from 'express'
 import bodyParser from 'body-parser'
 import { 

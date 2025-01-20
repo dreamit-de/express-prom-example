@@ -13,14 +13,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sgohlke/express-prom-example.git"
+    "url": "git+https://github.com/dreamit-de/express-prom-example.git"
   },
   "author": "Stefan Gohlke",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/sgohlke/express-prom-example/issues"
+    "url": "https://github.com/dreamit-de/express-prom-example/issues"
   },
-  "homepage": "https://github.com/sgohlke/express-prom-example#readme",
+  "homepage": "https://github.com/dreamit-de/express-prom-example#readme",
   "devDependencies": {
     "@types/body-parser": "1.19.5",
     "@types/express": "4.17.21",
@@ -37,6 +37,7 @@
   "dependencies": {
     "@dreamit/graphql-prom-metrics": "1.2.7",
     "@dreamit/graphql-server": "4.12.2",
+    "@dreamit/graphql-testing": "0.1.0",
     "express": "4.21.2",
     "graphql": "16.10.0",
     "prom-client": "15.1.3"
