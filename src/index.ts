@@ -34,11 +34,11 @@ export function startWebServer(): Server {
     const graphQLServerExpress = express()
     graphQLServerExpress.use(bodyParser.text({type: '*/*'}))
     graphQLServerExpress.all('/graphql', 
-        (request: GraphQLServerRequest, response: GraphQLServerResponse) => {
-            return graphqlServer.handleRequest(request, response)
+        async(request: GraphQLServerRequest, response: GraphQLServerResponse) => {
+            await graphqlServer.handleRequest(request, response)
         })
     graphQLServerExpress.get('/metrics', async(request, response) => {
-        return response.contentType(graphqlServer.getMetricsContentType())
+        response.contentType(graphqlServer.getMetricsContentType())
         .send(await graphqlServer.getMetrics())
     })    
     const server = graphQLServerExpress.listen({port: graphQLServerPort})
