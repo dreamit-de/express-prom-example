@@ -24,15 +24,15 @@
   "devDependencies": {
     "@types/body-parser": "1.19.5",
     "@types/express": "5.0.1",
-    "@types/node": "22.13.17",
+    "@types/node": "22.14.0",
     "esbuild": "0.25.2",
-    "oxlint": "0.16.4",
+    "oxlint": "0.16.5",
     "tsx": "4.19.3",
-    "typescript": "5.8.2"
+    "typescript": "5.8.3"
   },
   "dependencies": {
     "@dreamit/graphql-prom-metrics": "1.2.7",
-    "@dreamit/graphql-server": "4.13.2",
+    "@dreamit/graphql-server": "4.13.3",
     "@dreamit/graphql-testing": "0.1.2",
     "express": "5.1.0",
     "graphql": "16.10.0",
