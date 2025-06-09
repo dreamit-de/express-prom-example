@@ -22,11 +22,11 @@
   },
   "homepage": "https://github.com/dreamit-de/express-prom-example#readme",
   "devDependencies": {
-    "@types/body-parser": "1.19.5",
+    "@types/body-parser": "1.19.6",
     "@types/express": "5.0.1",
-    "@types/node": "22.15.29",
+    "@types/node": "22.15.30",
     "esbuild": "0.25.5",
-    "oxlint": "0.17.0",
+    "oxlint": "0.18.1",
     "tsx": "4.19.4",
     "typescript": "5.8.3"
   },
